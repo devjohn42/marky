@@ -1,20 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1422 800" opacity="0.3">
   <defs>
     <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="oooscillate-grad">
-      <stop stop-color="hsl(160, 80%, 60%)" stop-opacity="1" offset="0%"></stop>
-      <stop stop-color="hsl(280, 85%, 65%)" stop-opacity="1" offset="100%"></stop>
+      <stop stop-color="hsl(191, 57%, 46%)" stop-opacity="1" offset="100%"></stop>
     </linearGradient>
   </defs>
   <g stroke-width="2.5" stroke="url(#oooscillate-grad)" fill="none" stroke-linecap="round">
-    <path d="M 0 448 Q 355.5 -100 711 400 Q 1066.5 900 1422 448" opacity="0.1"></path>
-    <path d="M 0 420 Q 355.5 -50 711 400 Q 1066.5 850 1422 420" opacity="0.2"></path>
-    <path d="M 0 392 Q 355.5 0 711 400 Q 1066.5 800 1422 392" opacity="0.3"></path>
-    <path d="M 0 364 Q 355.5 50 711 400 Q 1066.5 750 1422 364" opacity="0.4"></path>
-    <path d="M 0 336 Q 355.5 100 711 400 Q 1066.5 700 1422 336" opacity="0.5"></path>
-    <path d="M 0 308 Q 355.5 150 711 400 Q 1066.5 650 1422 308" opacity="0.6"></path>
-    <path d="M 0 280 Q 355.5 200 711 400 Q 1066.5 600 1422 280" opacity="0.7"></path>
-    <path d="M 0 252 Q 355.5 250 711 400 Q 1066.5 550 1422 252" opacity="0.8"></path>
-    <path d="M 0 224 Q 355.5 300 711 400 Q 1066.5 500 1422 224" opacity="0.9"></path>
+    <path d="M 0 450 C 200 350, 500 550, 711 400 C 900 250, 1200 550, 1422 400" opacity="0.9"></path>
+    <path d="M 0 420 C 250 370, 550 520, 711 400 C 900 280, 1150 480, 1422 420" opacity="0.7"></path>
+    <path d="M 0 390 C 300 390, 600 480, 711 400 C 900 320, 1100 420, 1422 390" opacity="0.5"></path>
+    <path d="M 0 360 C 350 410, 650 450, 711 400 C 900 360, 1050 360, 1422 360" opacity="0.4"></path>
+    <path d="M 0 330 C 400 430, 700 420, 711 400 C 900 400, 1000 300, 1422 330" opacity="0.3"></path>
   </g>
 </svg>
-
