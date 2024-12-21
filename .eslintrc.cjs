@@ -6,4 +6,8 @@ module.exports = {
     '@electron-toolkit/eslint-config-ts/recommended',
     '@rocketseat/eslint-config/react',
   ],
+  rules: {
+    '@typescript-eslint/explicit-function-return-type': 'off',
+    '@typescript-eslint/no-unused-vars': 'off',
+  },
 }
