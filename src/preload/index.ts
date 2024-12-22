@@ -1,4 +1,4 @@
-import { contextBridge } from 'electron'
+import { contextBridge, ipcRenderer } from 'electron'
 
 if (!process.contextIsolated) {
   throw new Error('contextIsolation must be anabled in the BrowserWindow')
@@ -7,6 +7,10 @@ if (!process.contextIsolated) {
 try {
   contextBridge.exposeInMainWorld('context', {
     // TODO
+  })
+  contextBridge.exposeInMainWorld('electron', {
+    windowControl: (action: 'minimize' | 'maximize' | 'close') =>
+      ipcRenderer.send('window-control', action),
   })
 } catch (error) {
   console.log(error)

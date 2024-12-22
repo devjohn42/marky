@@ -15,7 +15,7 @@
     @apply select-none;
 
     /* @apply bg-transparent; */
-    @apply bg-[rgba(35,35,47,0.9)];
+    @apply bg-[rgba(35,35,47,0.9)] bg-fixed;
 
 
     @apply font-primary;

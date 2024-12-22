@@ -1,4 +1,4 @@
-import { app, shell, BrowserWindow } from 'electron'
+import { app, shell, BrowserWindow, ipcMain } from 'electron'
 import { join } from 'path'
 import { electronApp, optimizer, is } from '@electron-toolkit/utils'
 import icon from '../../resources/icon.png?asset'
@@ -38,6 +38,24 @@ function createWindow(): void {
     mainWindow.loadFile(join(__dirname, '../renderer/index.html'))
   }
 }
+
+ipcMain.on('window-control', (event, action) => {
+  const win = BrowserWindow.getFocusedWindow()
+
+  if (!win) return
+
+  switch (action) {
+    case 'minimize':
+      win.minimize()
+      break
+    case 'maximize':
+      win.isMaximized() ? win.unmaximize() : win.maximize()
+      break
+    case 'close':
+      win.close()
+      break
+  }
+})
 
 app.whenReady().then(() => {
   electronApp.setAppUserModelId('com.electron')
