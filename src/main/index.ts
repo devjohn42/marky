@@ -10,6 +10,12 @@ function createWindow(): void {
     show: false,
     autoHideMenuBar: true,
     ...(process.platform === 'linux' ? { icon } : {}),
+    center: true,
+    title: 'Marky',
+    frame: false,
+    vibrancy: 'under-window',
+    visualEffectState: 'active',
+    transparent: true,
     webPreferences: {
       preload: join(__dirname, '../preload/index.js'),
       sandbox: true,
@@ -39,6 +45,8 @@ app.whenReady().then(() => {
   app.on('browser-window-created', (_, window) => {
     optimizer.watchWindowShortcuts(window)
   })
+
+  // IPC test
 
   createWindow()
 

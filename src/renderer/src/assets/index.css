@@ -15,7 +15,8 @@
     @apply select-none;
 
     /* @apply bg-transparent; */
-    @apply bg-[#23232Fd4];
+    @apply bg-[rgba(35,35,47,0.9)];
+
 
     @apply font-primary;
 
