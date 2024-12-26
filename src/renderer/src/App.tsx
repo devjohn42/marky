@@ -2,7 +2,7 @@ import { HashRouter, Routes, Route } from 'react-router-dom'
 
 import TitleBar from './components/global/TitleBar'
 import Home from './Pages/Home'
-import Markdown from './Pages/Markdown'
+import AppScreen from './Pages/AppScreen/AppScreen'
 
 export const App = (): JSX.Element => {
   return (
@@ -11,7 +11,7 @@ export const App = (): JSX.Element => {
       <HashRouter>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="markdown" element={<Markdown />} />
+          <Route path="markdown" element={<AppScreen />} />
         </Routes>
       </HashRouter>
     </>
