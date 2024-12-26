@@ -23,17 +23,20 @@
     @apply overflow-hidden
   }
 
-  /* body {
-    @apply bg-wavy bg-cover flex items-center justify-center overflow-hidden;
-  } */
-
   header {
     -webkit-app-region: drag;
   }
 
-  .titleBarButton {
-    -webkit-app-region: no-drag;
-  }
 }
 
+@layer components {
+  .title_bar_button {
+    -webkit-app-region: no-drag;
+  }
+
+   .home_bg {
+    @apply bg-wavy bg-cover w-full h-screen overflow-hidden absolute top-0;
+  }
+
+}
 

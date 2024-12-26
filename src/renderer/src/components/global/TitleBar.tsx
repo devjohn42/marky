@@ -34,7 +34,7 @@ const TitleBar = () => {
   return (
     <div className="h-8 w-full absolute top-0 right-0 flex items-centers pl-6 shadow-md">
       <header className="w-full h-8 absolute left-0"></header>
-      <div className="flex items-center absolute z-20 right-0 titleBarButton">
+      <div className="flex items-center absolute z-20 right-0 title_bar_button">
         <TitleBarButton
           className="hover:bg-moonstone/10"
           onClick={() => handleWindowControl('minimize')}

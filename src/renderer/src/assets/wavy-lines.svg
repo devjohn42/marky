@@ -1,14 +1,17 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1422 800" opacity="0.3">
   <defs>
     <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="oooscillate-grad">
-      <stop stop-color="hsl(191, 57%, 46%)" stop-opacity="1" offset="100%"></stop>
+      <stop stop-color="rgba(50, 160, 184, 0.8)" stop-opacity="1" offset="100%"></stop>
     </linearGradient>
   </defs>
-  <g stroke-width="2.5" stroke="url(#oooscillate-grad)" fill="none" stroke-linecap="round">
-    <path d="M 0 450 C 200 350, 500 550, 711 400 C 900 250, 1200 550, 1422 400" opacity="0.9"></path>
-    <path d="M 0 420 C 250 370, 550 520, 711 400 C 900 280, 1150 480, 1422 420" opacity="0.7"></path>
-    <path d="M 0 390 C 300 390, 600 480, 711 400 C 900 320, 1100 420, 1422 390" opacity="0.5"></path>
-    <path d="M 0 360 C 350 410, 650 450, 711 400 C 900 360, 1050 360, 1422 360" opacity="0.4"></path>
-    <path d="M 0 330 C 400 430, 700 420, 711 400 C 900 400, 1000 300, 1422 330" opacity="0.3"></path>
+  <g stroke-width="2" stroke="url(#oooscillate-grad)" fill="none" stroke-linecap="round">
+    <path d="M 0 500 C 200 400, 500 600, 711 450 C 900 300, 1200 600, 1422 450" opacity="0.9"></path>
+    <path d="M 0 470 C 250 420, 550 570, 711 450 C 900 330, 1150 530, 1422 470" opacity="0.8"></path>
+    <path d="M 0 440 C 300 440, 600 530, 711 450 C 900 370, 1100 470, 1422 440" opacity="0.7"></path>
+    <path d="M 0 410 C 350 460, 650 500, 711 450 C 900 410, 1050 410, 1422 410" opacity="0.6"></path>
+    <path d="M 0 380 C 400 480, 700 470, 711 450 C 900 450, 1000 350, 1422 380" opacity="0.5"></path>
+    <path d="M 0 350 C 450 500, 750 440, 711 450 C 900 490, 950 290, 1422 350" opacity="0.4"></path>
+    <path d="M 0 320 C 500 520, 800 410, 711 450 C 900 530, 900 230, 1422 320" opacity="0.3"></path>
+    <path d="M 0 290 C 550 540, 850 380, 711 450 C 900 570, 850 170, 1422 290" opacity="0.2"></path>
   </g>
 </svg>
