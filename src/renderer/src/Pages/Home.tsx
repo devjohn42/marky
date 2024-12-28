@@ -2,21 +2,6 @@ import { Link } from 'react-router-dom'
 
 import logo from '../assets/logo.svg'
 
-// const Button = ({ className, type, title }) => {
-//   return (
-//     <button
-//       type={type}
-//       className={cn(
-//         `${type === 'add' ? 'border-moonstone text-moonstone' : 'border-carmine text-carmine'}`,
-//         'font-semibold hover:rounded-[2px] hover:bg-raisin_dark border-[2px] px-3 py-1 duration-200',
-//         className,
-//       )}
-//     >
-//       {title}
-//     </button>
-//   )
-// }
-
 const Logo = () => {
   return (
     <div className="flex items-end">

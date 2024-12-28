@@ -1,12 +1,15 @@
-import React from 'react'
-import SideBar from './SideBar'
-import MarkdownContent from './MarkdownContent'
+import { ComponentProps } from 'react'
+import { cn } from '@renderer/utils'
 
-const RootLayot = () => {
+type RootLayotProps = ComponentProps<'main'>
+
+const RootLayot = ({ className, children, ...props }: RootLayotProps) => {
   return (
-    <main className="bg-raisin w-full h-[100vh] mt-16 flex flex-1">
-      <SideBar />
-      <MarkdownContent />
+    <main
+      className={cn('bg-raisin w-full h-[100vh] flex flex-1', className)}
+      {...props}
+    >
+      {children}
     </main>
   )
 }
