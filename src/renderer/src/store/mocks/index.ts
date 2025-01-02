@@ -97,4 +97,12 @@ export const notesMock: NoteInfo[] = [
     title: 'Next Projects',
     lastEditTime: new Date().getTime(),
   },
+  {
+    title: 'Next Projects',
+    lastEditTime: new Date().getTime(),
+  },
+  {
+    title: 'Next Projects',
+    lastEditTime: new Date().getTime(),
+  },
 ]

@@ -1,4 +1,4 @@
-import { cn } from '@renderer/utils'
+import { cn, formatDateFromMs } from '@renderer/utils'
 import { NoteInfo } from '@shared/models'
 import { ComponentProps } from 'react'
 
@@ -14,6 +14,8 @@ export const NotePreview = ({
   className,
   ...props
 }: NotePreviewProps) => {
+  const date = formatDateFromMs(lastEditTime)
+
   return (
     <div
       className={cn(
@@ -29,9 +31,7 @@ export const NotePreview = ({
       <h3 className="text-alice font-primary mb-1 font-semibold truncate">
         {title}
       </h3>
-      <span className="text-alice/50 mb-2 text-xs font-light">
-        {lastEditTime}
-      </span>
+      <span className="text-alice/50 mb-2 text-xs font-light">{date}</span>
     </div>
   )
 }

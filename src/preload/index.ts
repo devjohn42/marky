@@ -6,7 +6,7 @@ if (!process.contextIsolated) {
 
 try {
   contextBridge.exposeInMainWorld('context', {
-    // TODO
+    local: navigator.language,
   })
   contextBridge.exposeInMainWorld('electron', {
     windowControl: (action: 'minimize' | 'maximize' | 'close') =>
