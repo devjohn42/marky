@@ -27,6 +27,17 @@
     -webkit-app-region: drag;
   }
 
+  ::-webkit-scrollbar {
+    @apply w-[4px];
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-raisin
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-moonstone rounded-[4px];
+  }
+
 }
 
 @layer components {
