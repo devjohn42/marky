@@ -49,5 +49,9 @@
     @apply bg-wavy bg-cover w-full h-screen overflow-hidden absolute top-0;
   }
 
+  .bg_markdown_scroll::-webkit-scrollbar-track {
+      @apply bg-raisin_dark
+  }
+
 }
 

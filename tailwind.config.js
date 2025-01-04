@@ -19,5 +19,5 @@ module.exports = {
       logo: 'url(logo.svg)',
     },
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/typography')],
 }

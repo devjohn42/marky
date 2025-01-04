@@ -6,7 +6,7 @@ type RootLayotProps = ComponentProps<'main'>
 const RootLayot = ({ className, children, ...props }: RootLayotProps) => {
   return (
     <main
-      className={cn('bg-raisin w-full h-[100vh] flex flex-1', className)}
+      className={cn('bg-raisin w-full max-h-screen flex', className)}
       {...props}
     >
       {children}
