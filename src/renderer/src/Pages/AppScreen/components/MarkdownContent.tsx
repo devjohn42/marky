@@ -5,10 +5,27 @@ import {
   markdownShortcutPlugin,
   quotePlugin,
 } from '@mdxeditor/editor'
+import { cn } from '@renderer/utils'
+import { ComponentProps } from 'react'
+
+type MarkdownContentTitleProps = ComponentProps<'div'>
+
+const MarkdownContentTitle = ({
+  className,
+  ...props
+}: MarkdownContentTitleProps) => {
+  const title = 'Marky App'
+  return (
+    <div className={cn('flex justify-center pt-1', className)} {...props}>
+      <span className="text-alice/60">{title}</span>
+    </div>
+  )
+}
 
 const MarkdownContent = () => {
   return (
-    <div className="bg-raisin_dark w-[75%] overflow-y-auto bg_markdown_scroll mt-8 flex justify-start px-2 py-1">
+    <div className="bg-raisin_dark w-[75%] overflow-y-auto bg_markdown_scroll mt-8 flex flex-col justify-start px-2 py-1">
+      <MarkdownContentTitle />
       <MDXEditor
         className="w-full"
         markdown={'> Hello from Marky'}
