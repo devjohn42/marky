@@ -19,19 +19,18 @@ export const NotePreview = ({
   return (
     <div
       className={cn(
-        'w-[97%] flex flex-col items-start px-2 py-3 rounded-[4px] transition-colors duration-200 cursor-pointer',
-        {
-          'hover:bg-raisin_dark hover:shadow-md': isActive,
-          'bg-raisin': !isActive,
-        },
+        `w-[97%] hover:bg-raisin_dark hover:shadow-md flex flex-col gap-2 items-start justify-center px-2 py-3 mb-2 rounded-[4px]
+         transition-colors ease-in-out duration-200 cursor-pointer
+         ${isActive ? 'bg-raisin_dark shadow-md' : ''}
+        `,
         className,
       )}
       {...props}
     >
-      <h3 className="text-alice font-primary mb-1 font-semibold truncate">
+      <h3 className="text-alice font-primary font-semibold truncate">
         {title}
       </h3>
-      <span className="text-alice/50 mb-2 text-xs font-light">{date}</span>
+      <span className="text-alice/50 text-xs font-light">{date}</span>
     </div>
   )
 }
