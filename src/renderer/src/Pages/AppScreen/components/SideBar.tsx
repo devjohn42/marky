@@ -8,7 +8,7 @@ type AsideProps = ComponentProps<'aside'>
 const SideBar = ({ className, children, ...props }: AsideProps) => {
   return (
     <aside
-      className={cn('w-[25%] px-2 mt-10 flex flex-col gap-3', className)}
+      className={cn('w-[25%] px-2 pt-3 flex flex-col gap-3', className)}
       {...props}
     >
       <NoteRowButtons />

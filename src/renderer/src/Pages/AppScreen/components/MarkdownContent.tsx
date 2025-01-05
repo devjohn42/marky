@@ -5,7 +5,10 @@ import {
   markdownShortcutPlugin,
   quotePlugin,
 } from '@mdxeditor/editor'
+import { useMarkdownNote } from '@renderer/hooks/useMarkdownNote'
+import { atomSelectedNote } from '@renderer/store'
 import { cn } from '@renderer/utils'
+import { useAtomValue } from 'jotai'
 import { ComponentProps } from 'react'
 
 type MarkdownContentTitleProps = ComponentProps<'div'>
@@ -14,21 +17,29 @@ const MarkdownContentTitle = ({
   className,
   ...props
 }: MarkdownContentTitleProps) => {
-  const title = 'Marky App'
+  const selectedNote = useAtomValue(atomSelectedNote)
+
+  if (!selectedNote) return null
+
   return (
     <div className={cn('flex justify-center pt-1', className)} {...props}>
-      <span className="text-alice/60">{title}</span>
+      <span className="text-alice/60">{selectedNote.title}</span>
     </div>
   )
 }
 
 const MarkdownContent = () => {
+  const { selectedNote } = useMarkdownNote()
+
+  if (!selectedNote) return null
+
   return (
-    <div className="bg-raisin_dark w-[75%] overflow-y-auto bg_markdown_scroll mt-8 flex flex-col justify-start px-2 py-1">
+    <div className="bg-raisin_dark w-[75%] overflow-y-auto bg_markdown_scroll flex flex-col justify-start px-2 py-1">
       <MarkdownContentTitle />
       <MDXEditor
         className="w-full"
-        markdown={'> Hello from Marky'}
+        key={selectedNote.title}
+        markdown={selectedNote?.content}
         plugins={[
           headingsPlugin(),
           listsPlugin(),
