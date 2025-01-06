@@ -9,7 +9,7 @@ import { useMarkdownNote } from '@renderer/hooks/useMarkdownNote'
 import { atomSelectedNote } from '@renderer/store'
 import { cn } from '@renderer/utils'
 import { useAtomValue } from 'jotai'
-import { ComponentProps } from 'react'
+import { ComponentProps, forwardRef } from 'react'
 
 type MarkdownContentTitleProps = ComponentProps<'div'>
 
@@ -28,31 +28,38 @@ const MarkdownContentTitle = ({
   )
 }
 
-const MarkdownContent = () => {
-  const { selectedNote } = useMarkdownNote()
+// eslint-disable-next-line react/display-name
+const MarkdownContent = forwardRef<HTMLDivElement, ComponentProps<'div'>>(
+  ({ ...props }, ref) => {
+    const { selectedNote } = useMarkdownNote()
 
-  if (!selectedNote) return null
+    if (!selectedNote) return null
 
-  return (
-    <div className="bg-raisin_dark w-[75%] overflow-y-auto bg_markdown_scroll flex flex-col justify-start px-2 py-1">
-      <MarkdownContentTitle />
-      <MDXEditor
-        className="w-full"
-        key={selectedNote.title}
-        markdown={selectedNote?.content}
-        plugins={[
-          headingsPlugin(),
-          listsPlugin(),
-          quotePlugin(),
-          markdownShortcutPlugin(),
-        ]}
-        contentEditableClassName="outline-none minh-h-screen max-w-none text-large px-4 caret-[#74b1be]
+    return (
+      <div
+        ref={ref}
+        {...props}
+        className="bg-raisin_dark w-[75%] overflow-y-auto bg_markdown_scroll flex flex-col justify-start px-2 py-1"
+      >
+        <MarkdownContentTitle />
+        <MDXEditor
+          className="w-full"
+          key={selectedNote.title}
+          markdown={selectedNote?.content}
+          plugins={[
+            headingsPlugin(),
+            listsPlugin(),
+            quotePlugin(),
+            markdownShortcutPlugin(),
+          ]}
+          contentEditableClassName="outline-none minh-h-screen max-w-none text-large px-4 caret-[#74b1be]
       prose prose-invert prose-p:my-3 prose-p:leading-relaxed prose-headings:my-4 prose-blockquote:my-4
       prose-ul:my-2 prose-li:my-0 prose-code:px-1 prose-code:text-red-500 prose-code:before:content-['']
       prose-cod:after:content-['']"
-      />
-    </div>
-  )
-}
+        />
+      </div>
+    )
+  },
+)
 
 export default MarkdownContent

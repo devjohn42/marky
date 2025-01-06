@@ -1,7 +1,5 @@
 import { cn } from '@renderer/utils'
-import { ComponentProps } from 'react'
-import NoteRowButtons from './ui/NoteRowButtons'
-import { NotePreviewList } from './ui/NotePreviewList'
+import { ComponentProps, useRef } from 'react'
 
 type AsideProps = ComponentProps<'aside'>
 
@@ -11,9 +9,7 @@ const SideBar = ({ className, children, ...props }: AsideProps) => {
       className={cn('w-[25%] px-2 pt-3 flex flex-col gap-3', className)}
       {...props}
     >
-      <NoteRowButtons />
-      {/* <div className="mt-4">Notes</div> */}
-      <NotePreviewList />
+      {children}
     </aside>
   )
 }
