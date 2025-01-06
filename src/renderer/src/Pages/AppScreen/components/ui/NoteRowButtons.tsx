@@ -1,4 +1,4 @@
-import { createAtomNote } from '@renderer/store'
+import { createAtomNote, deleteAtomNote } from '@renderer/store'
 import { cn } from '@renderer/utils'
 import { useSetAtom } from 'jotai'
 import { FaPlusCircle, FaTrash } from 'react-icons/fa'
@@ -22,14 +22,19 @@ const ActionButton = ({ children, className, type, title, onClick }) => {
 
 const NoteRowButtons = () => {
   const createNote = useSetAtom(createAtomNote)
+  const deleteNote = useSetAtom(deleteAtomNote)
 
-  const handleCreation = () => {
+  const handleCreate = () => {
     createNote()
+  }
+
+  const handleDelete = () => {
+    deleteNote()
   }
   return (
     <div className="w-full flex items-center gap-1">
       <ActionButton
-        onClick={handleCreation}
+        onClick={handleCreate}
         title={'Add New'}
         type={'add'}
         className="flex items-center justify-center gap-2"
@@ -37,7 +42,7 @@ const NoteRowButtons = () => {
         <FaPlusCircle className="text-[14px]" />
       </ActionButton>
       <ActionButton
-        onClick={''}
+        onClick={handleDelete}
         title={'Delete'}
         type={'delete'}
         className="flex items-center justify-center gap-2"

@@ -21,9 +21,9 @@ export const NotePreview = ({
       className={cn(
         `w-[97%] hover:bg-raisin_dark hover:shadow-md flex flex-col gap-2 items-start justify-center px-2 py-3 mb-2 rounded-[4px]
          transition-colors ease-in-out duration-200 cursor-pointer
-         border-l-4 border-moonstone border-hidden
+         border-l-4 border-moonstone border-opacity-30
 
-         ${isActive ? 'bg-raisin_dark shadow-md border-l-4 border-l-moonstone border-solid' : ''}
+         ${isActive ? 'bg-raisin_dark shadow-md border-l-4 border-l-moonstone border-solid border-opacity-100' : ''}
         `,
         className,
       )}

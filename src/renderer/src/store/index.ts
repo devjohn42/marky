@@ -37,3 +37,17 @@ export const createAtomNote = atom(null, (get, set) => {
 
   set(atomSelectedNoteIndex, 0)
 })
+
+export const deleteAtomNote = atom(null, (get, set) => {
+  const notes = get(atomNotes)
+  const selectedNote = get(atomSelectedNote)
+
+  if (!selectedNote) return
+
+  set(
+    atomNotes,
+    notes.filter((note) => note.title !== selectedNote.title),
+  )
+
+  set(atomSelectedNoteIndex, null)
+})
