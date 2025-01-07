@@ -2,8 +2,8 @@ import { app, shell, BrowserWindow, ipcMain } from 'electron'
 import { join } from 'path'
 import { electronApp, optimizer, is } from '@electron-toolkit/utils'
 import icon from '../../resources/icon.png?asset'
-import { GetNotes } from '@shared/type'
-import { getNotes } from './lib'
+import { GetNotes, ReadNote } from '@shared/types'
+import { getNotes, readNote } from './lib'
 
 function createWindow(): void {
   const mainWindow = new BrowserWindow({
@@ -69,6 +69,9 @@ app.whenReady().then(() => {
   // IPC test
   ipcMain.handle('getNotes', (_, ...agrs: Parameters<GetNotes>) =>
     getNotes(...agrs),
+  )
+  ipcMain.handle('readNote', (_, ...args: Parameters<ReadNote>) =>
+    readNote(...args),
   )
 
   createWindow()
