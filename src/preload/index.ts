@@ -1,3 +1,4 @@
+import { GetNotes } from '@shared/type'
 import { contextBridge, ipcRenderer } from 'electron'
 
 if (!process.contextIsolated) {
@@ -7,6 +8,8 @@ if (!process.contextIsolated) {
 try {
   contextBridge.exposeInMainWorld('context', {
     local: navigator.language,
+    getNotes: (...args: Parameters<GetNotes>) =>
+      ipcRenderer.invoke('getNotes', ...args),
   })
   contextBridge.exposeInMainWorld('electron', {
     windowControl: (action: 'minimize' | 'maximize' | 'close') =>
