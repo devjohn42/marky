@@ -24,8 +24,8 @@ const NoteRowButtons = () => {
   const createNote = useSetAtom(createAtomNote)
   const deleteNote = useSetAtom(deleteAtomNote)
 
-  const handleCreate = () => {
-    createNote()
+  const handleCreate = async () => {
+    await createNote()
   }
 
   const handleDelete = () => {
