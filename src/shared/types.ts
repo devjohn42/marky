@@ -4,3 +4,7 @@ export type WindowControl = (action: 'minimize' | 'maximize' | 'close') => void
 
 export type GetNotes = () => Promise<NoteInfo[]>
 export type ReadNote = (title: NoteInfo['title']) => Promise<NoteContent>
+export type WriteNote = (
+  title: NoteInfo['title'],
+  content: NoteContent,
+) => Promise<void>
