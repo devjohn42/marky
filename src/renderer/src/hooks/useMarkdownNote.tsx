@@ -23,9 +23,22 @@ export const useMarkdownNote = () => {
     { leading: false, trailing: true },
   )
 
+  const handleBlur = async () => {
+    if (!selectedNote) return
+
+    handleAutoSaving.cancel()
+
+    const content = markdownEditorRef.current?.getMarkdown()
+
+    if (content != null) {
+      await saveNote(content)
+    }
+  }
+
   return {
     markdownEditorRef,
     selectedNote,
     handleAutoSaving,
+    handleBlur,
   }
 }

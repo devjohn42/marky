@@ -31,7 +31,7 @@ const MarkdownContentTitle = ({
 // eslint-disable-next-line react/display-name
 const MarkdownContent = forwardRef<HTMLDivElement, ComponentProps<'div'>>(
   ({ ...props }, ref) => {
-    const { markdownEditorRef, selectedNote, handleAutoSaving } =
+    const { markdownEditorRef, selectedNote, handleAutoSaving, handleBlur } =
       useMarkdownNote()
 
     if (!selectedNote) return null
@@ -49,6 +49,7 @@ const MarkdownContent = forwardRef<HTMLDivElement, ComponentProps<'div'>>(
           key={selectedNote.title}
           markdown={selectedNote?.content}
           onChange={handleAutoSaving}
+          onBlur={handleBlur}
           plugins={[
             headingsPlugin(),
             listsPlugin(),
