@@ -28,8 +28,8 @@ const NoteRowButtons = () => {
     await createNote()
   }
 
-  const handleDelete = () => {
-    deleteNote()
+  const handleDelete = async () => {
+    await deleteNote()
   }
   return (
     <div className="w-full flex items-center gap-1">

@@ -1,5 +1,6 @@
 import {
   CreateNote,
+  DeleteNote,
   GetNotes,
   ReadNote,
   WriteNote,
@@ -11,6 +12,7 @@ declare global {
     context: {
       locale: string
       createNote: CreateNote
+      deleteNote: DeleteNote
       getNotes: GetNotes
       readNote: ReadNote
       writeNote: WriteNote

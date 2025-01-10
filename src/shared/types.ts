@@ -3,6 +3,7 @@ import { NoteContent, NoteInfo } from './models'
 export type WindowControl = (action: 'minimize' | 'maximize' | 'close') => void
 
 export type CreateNote = () => Promise<NoteInfo['title'] | false>
+export type DeleteNote = (title: NoteInfo['title']) => Promise<boolean>
 
 export type GetNotes = () => Promise<NoteInfo[]>
 export type ReadNote = (title: NoteInfo['title']) => Promise<NoteContent>
