@@ -2,8 +2,8 @@ import {
   MDXEditor,
   headingsPlugin,
   listsPlugin,
-  markdownShortcutPlugin,
   quotePlugin,
+  markdownShortcutPlugin,
 } from '@mdxeditor/editor'
 import { useMarkdownNote } from '@renderer/hooks/useMarkdownNote'
 import { atomSelectedNote } from '@renderer/store'
